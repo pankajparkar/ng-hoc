@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-hoc"
+    }
+  },
+  "defaultProject": "ng-hoc",
+  "cli": {
+    "analytics": "7b018622-ee21-4459-a121-3d12bf2d0e5d"
+  }
 }
