@@ -1,11 +1,12 @@
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appTooltip]'
 })
 export class TooltipDirective {
 
-  display: boolean;
+  @Input()
+  display: boolean = true;
 
   constructor() { }
 
@@ -14,7 +15,7 @@ export class TooltipDirective {
     this.display = true;
   }
 
-  @HostListener('mouseover')
+  @HostListener('mouseout')
   onFocusout() {
     this.display = false;
   }
