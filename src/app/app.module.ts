@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TooltipDirective } from './tooltip.directive';
 import { DragNDropDirective } from './drag-n-drop.directive';
+import { TestComponent } from './test/test.component';
 
 @Component({
   selector: 'app-test',
@@ -19,7 +20,8 @@ export class NewComponent extends TooltipDirective {
     AppComponent,
     TooltipDirective,
     NewComponent,
-    DragNDropDirective
+    DragNDropDirective,
+    TestComponent
   ],
   imports: [
     BrowserModule,

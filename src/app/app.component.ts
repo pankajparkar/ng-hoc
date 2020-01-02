@@ -1,6 +1,5 @@
 import { Component, Renderer2, ɵrenderComponent, Injector, ElementRef } from '@angular/core';
-import { TooltipDirective } from './tooltip.directive';
-import {} from '@angular/common';
+import { TestComponent } from './test/test.component';
 
 const selector = 'app-highlight';
 
@@ -19,10 +18,10 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    const div = document.createElement('div');
+    const div = document.createElement(selector);
     div.innerHTML = 'Highlight Test';
     this.render.appendChild(this.el.nativeElement, div);
-    ɵrenderComponent(TooltipDirective, {
+    ɵrenderComponent(TestComponent, {
       host: selector,
       injector: this.injector
     });
