@@ -3,12 +3,12 @@
     justify-content: space-around;
     flex-flow: column nowrap;
     header {
-
+        height: 20px;
     }
     .section {
-
+        height: calc(100vh-40px);
     }
     footer {
-
+        height: 20px;
     }
 }
