@@ -8,6 +8,7 @@ import { DragNDropDirective } from './drag-n-drop.directive';
 import { TestComponent } from './test/test.component';
 import { PageComponent } from './page/page.component';
 import { PagerComponent } from './pager/pager.component';
+import { BubblyEffectDirective } from './bubbly-effect.directive';
 
 @Component({
   selector: 'app-test',
@@ -25,7 +26,8 @@ export class NewComponent extends TooltipDirective {
     DragNDropDirective,
     TestComponent,
     PageComponent,
-    PagerComponent
+    PagerComponent,
+    BubblyEffectDirective
   ],
   imports: [
     BrowserModule,
