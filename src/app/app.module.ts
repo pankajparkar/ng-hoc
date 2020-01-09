@@ -9,6 +9,7 @@ import { TestComponent } from './test/test.component';
 import { PageComponent } from './page/page.component';
 import { PagerComponent } from './pager/pager.component';
 import { BubblyEffectDirective } from './bubbly-effect.directive';
+import { PopoverComponent } from './popover/popover.component';
 
 @Component({
   selector: 'app-test',
@@ -27,7 +28,8 @@ export class NewComponent extends TooltipDirective {
     TestComponent,
     PageComponent,
     PagerComponent,
-    BubblyEffectDirective
+    BubblyEffectDirective,
+    PopoverComponent
   ],
   imports: [
     BrowserModule,
