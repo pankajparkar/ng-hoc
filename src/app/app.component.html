@@ -8,3 +8,8 @@
 <app-pager>
   <app-page></app-page>
 </app-pager>
+
+<ng-template
+  [ngComponentOutlet]="comp | async"
+  [ngIf]="comp">
+</ng-template>

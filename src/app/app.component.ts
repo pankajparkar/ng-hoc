@@ -10,12 +10,16 @@ const selector = 'app-highlight';
 })
 export class AppComponent {
   title = 'ng-hoc';
-
+  comp;
   constructor(
     private injector: Injector,
     private el: ElementRef,
     private render: Renderer2,
   ) {}
+
+  async loadComponent() {
+    this.comp = (await import('./popover/popover.component')).PopoverComponent;
+  }
 
   ngOnInit() {
     const div = document.createElement(selector);
