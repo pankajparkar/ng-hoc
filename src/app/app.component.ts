@@ -1,5 +1,6 @@
-import { Component, Renderer2, ɵrenderComponent, Injector, ElementRef } from '@angular/core';
+import { Component, Renderer2, ɵrenderComponent, Injector, ElementRef, Type } from '@angular/core';
 import { TestComponent } from './test/test.component';
+import { PopoverComponent } from './popover/popover.component';
 
 const selector = 'app-highlight';
 
@@ -18,7 +19,7 @@ export class AppComponent {
   ) {}
 
   async loadComponent() {
-    this.comp = (await import('./popover/popover.component')).PopoverComponent;
+    const comp = (await import('./popover/popover.component')).PopoverComponent;
   }
 
   ngOnInit() {
@@ -29,5 +30,6 @@ export class AppComponent {
       host: selector,
       injector: this.injector
     });
+    this.loadComponent();
   }
 }
