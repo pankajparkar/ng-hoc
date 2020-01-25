@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PageComponent } from './page/page.component';
+import { withRoute } from './withRoute';
 
-
-const routes: Routes = [];
+const routes: Routes = [
+  {path: 'page', component: withRoute(PageComponent)}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
