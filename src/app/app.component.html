@@ -1,4 +1,4 @@
-<div appTooltip [display]="true">
+<!-- <div appTooltip [display]="true">
   Something Interesting
 </div>
 <hr />
@@ -8,8 +8,9 @@
 <app-pager>
   <app-page></app-page>
 </app-pager>
-Test
+Test -->
 <ng-template
   [ngIf]="comp"
   [ngComponentOutlet]="comp | async">
 </ng-template>
+<router-outlet></router-outlet>

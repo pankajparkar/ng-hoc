@@ -1,5 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { withStyle } from './../withStyle'
 
+@withStyle({
+  style: `
+    test: {
+      border: red;
+    }
+  `
+})
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
