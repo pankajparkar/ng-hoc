@@ -12,9 +12,8 @@ import {
 } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-import { PageComponent } from './page/page.component';
 
-export function withRoute(inner: Type<PageComponent>) {
+export function withRoute(inner: Type<any>) {
 
     const ngComponent = inner as ɵComponentType<any>;
     const innerCompDef = ngComponent.ɵcmp as ɵComponentDef<any>;
