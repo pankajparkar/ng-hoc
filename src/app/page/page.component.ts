@@ -5,7 +5,7 @@ import { withStyle } from './../withStyle'
   // TODO: right interceptor to write down _ngcontent_ part
   style: `
     .test[_ngcontent-%COMP%] {
-      border: red;
+      border: 1px solid red;
     }
   `
 })
