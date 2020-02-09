@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TooltipDirective } from '../tooltip.directive';
 
 @Component({
@@ -8,7 +8,10 @@ import { TooltipDirective } from '../tooltip.directive';
 })
 export class TestComponent extends TooltipDirective implements OnInit {
 
+  @Input() input;
+
   ngOnInit() {
+    console.log(this.input, ' input')
   }
 
 }
