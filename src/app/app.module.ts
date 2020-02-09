@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,6 @@ import { BubblyEffectDirective } from './bubbly-effect.directive';
 import { PopoverComponent } from './popover/popover.component';
 import { ClearAllSubscriptionComponent } from './clear-all-subscription/clear-all-subscription.component';
 import { WithRouterComponent } from './with-router/with-router.component';
-import { WithAddDebuggingComponent } from './with-add-debugging/with-add-debugging.component';
 
 @Component({
   selector: 'app-test',
@@ -35,7 +34,6 @@ export class NewComponent extends TooltipDirective {
     PopoverComponent,
     ClearAllSubscriptionComponent,
     WithRouterComponent,
-    WithAddDebuggingComponent
   ],
   imports: [
     BrowserModule,
