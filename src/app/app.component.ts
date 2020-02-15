@@ -23,14 +23,14 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    const div = document.createElement(selector);
-    div.innerHTML = 'Highlight Test';
-    this.render.appendChild(this.el.nativeElement, div);
-    const testComponent = ɵrenderComponent(TestComponent, {
-      host: selector,
-      injector: this.injector,
-    });
-    testComponent.input = 'Something Something';
-    this.loadComponent();
+    // const div = document.createElement(selector);
+    // div.innerHTML = 'Highlight Test';
+    // this.render.appendChild(this.el.nativeElement, div);
+    // const testComponent = ɵrenderComponent(TestComponent, {
+    //   host: selector,
+    //   injector: this.injector,
+    // });
+    // testComponent.input = 'Something Something';
+    // this.loadComponent();
   }
 }
