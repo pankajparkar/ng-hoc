@@ -5,7 +5,8 @@ import { withRoute } from './hoc/withRoute';
 import { jump } from './hoc/animation/jump';
 
 const routes: Routes = [
-  {path: 'page', component: jump(PageComponent)}
+  {path: 'page', component: jump(withRoute(PageComponent))},
+  {path: '**', redirectTo: 'page'}
 ];
 
 @NgModule({

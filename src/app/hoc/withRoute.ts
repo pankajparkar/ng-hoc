@@ -1,17 +1,17 @@
 import {
     ɵɵdefineComponent,
-    ɵɵdirectiveInject,
     ɵComponentDef,
     ChangeDetectionStrategy,
     ɵɵelement,
-    OnInit,
     ɵɵproperty,
     Type,
     ɵComponentType,
-    ɵRenderFlags
+    ɵRenderFlags,
+    ElementRef,
+    ɵɵdirectiveInject,
 } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { HigherOrderComponent } from './base';
 
 export function withRoute(inner: Type<any>) {
 
@@ -19,25 +19,11 @@ export function withRoute(inner: Type<any>) {
     const innerCompDef = ngComponent.ɵcmp as ɵComponentDef<any>;
     const elementName = innerCompDef.selectors[0][0] as string;
     
-    class HigherOrderComponent implements OnInit {
+    const higherOrderComponent = HigherOrderComponent;
 
-        static ɵcmp: ɵComponentDef<HigherOrderComponent>;
+    (higherOrderComponent as any).ɵfac = () => new higherOrderComponent(ɵɵdirectiveInject(ElementRef));
 
-        params: any = {};
-
-        constructor(private route: ActivatedRoute) {
-        }
-
-        ngOnInit() {
-            this.route.params.subscribe(params => {
-              this.params = params;
-            });
-        }
-    }
-
-    (HigherOrderComponent as any).ɵfac = () => new HigherOrderComponent(ɵɵdirectiveInject(ActivatedRoute));
-
-    HigherOrderComponent.ɵcmp = ɵɵdefineComponent({
+    higherOrderComponent.ɵcmp = ɵɵdefineComponent({
         consts: [[]],
         vars: 1,
         decls: 1,
@@ -61,7 +47,7 @@ export function withRoute(inner: Type<any>) {
                 }
             }
         },
-        type: HigherOrderComponent,
+        type: higherOrderComponent,
     });
 
     return HigherOrderComponent;
