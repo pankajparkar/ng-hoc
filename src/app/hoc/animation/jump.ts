@@ -1,5 +1,5 @@
 import { 
-  ɵɵdirectiveInject, INJECTOR
+  ɵɵdirectiveInject, INJECTOR, ElementRef, InjectFlags
 } from '@angular/core';
 import { AnimationBuilder, query, style, stagger, animate } from '@angular/animations';
 
@@ -14,16 +14,18 @@ function _buildAnimation(builder) {
   ]);
 }
 export function jump(inner) {
-
   const cmp = inner.ɵcmp;
   const originalAfterViewInit = cmp.afterViewInit;
-  cmp.afterViewInit = (...args) => {
-    originalAfterViewInit(...args);
-    const injector = ɵɵdirectiveInject(INJECTOR);
+  cmp.afterViewInit = function afterViewInit(...args) {
+    if (originalAfterViewInit) {
+      originalAfterViewInit(...args);
+    }
+    console.log(this, this.injector)
+    const injector = this.injector;
+    const el = injector.get(ElementRef);
     const builder = injector.get(AnimationBuilder);
     const animation = _buildAnimation(builder);
-    // TODO: find better solution for below code.
-    animation.create(injector['_lView'][29].el.nativeElement).play();
+    animation.create(el.nativeElement).play();
   }
   return inner;
 }

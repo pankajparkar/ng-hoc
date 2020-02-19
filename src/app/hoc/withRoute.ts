@@ -7,8 +7,8 @@ import {
     Type,
     ɵComponentType,
     ɵRenderFlags,
-    ElementRef,
     ɵɵdirectiveInject,
+    INJECTOR,
 } from '@angular/core';
 
 import { HigherOrderComponent } from './base';
@@ -20,8 +20,7 @@ export function withRoute(inner: Type<any>) {
     const elementName = innerCompDef.selectors[0][0] as string;
     
     const higherOrderComponent = HigherOrderComponent;
-
-    (higherOrderComponent as any).ɵfac = () => new higherOrderComponent(ɵɵdirectiveInject(ElementRef));
+    (higherOrderComponent as any).ɵfac = () => new higherOrderComponent(ɵɵdirectiveInject(INJECTOR));
 
     higherOrderComponent.ɵcmp = ɵɵdefineComponent({
         consts: [[]],

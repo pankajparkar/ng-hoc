@@ -1,4 +1,4 @@
-import { ɵComponentDef, OnInit, ɵɵdirectiveInject, INJECTOR, ElementRef } from '@angular/core';
+import { ɵComponentDef, OnInit, ɵɵdirectiveInject, INJECTOR, ElementRef, Injector } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 export class HigherOrderComponent implements OnInit {
@@ -6,10 +6,9 @@ export class HigherOrderComponent implements OnInit {
   static ɵcmp: ɵComponentDef<HigherOrderComponent>;
 
   params: any = {};
-  injector;
 
   constructor(
-    private el: ElementRef
+    private injector: Injector,
   ) {
     this.injector = ɵɵdirectiveInject(INJECTOR)
   }

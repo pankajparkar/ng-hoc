@@ -1,4 +1,4 @@
-import { Type } from '@angular/core';
+import { Type, getPlatform } from '@angular/core';
 import { Identifiers } from '@angular/compiler';
 
 var test = Identifiers['elementStylingApply'];
