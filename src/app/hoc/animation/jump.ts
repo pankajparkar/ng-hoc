@@ -5,7 +5,7 @@ import { AnimationBuilder, query, style, stagger, animate } from '@angular/anima
 
 function _buildAnimation(builder) {
   return builder.build([
-    query('h1', [
+    query('*', [
       style({ opacity: 0, transform: 'translateY(-50px)' }),
       stagger(100, [
         animate('500ms', style({ opacity: 1, transform: 'none' }))
