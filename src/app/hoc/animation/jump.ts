@@ -1,6 +1,4 @@
-import { 
-  ɵɵdirectiveInject, INJECTOR, ElementRef, InjectFlags
-} from '@angular/core';
+import { ElementRef } from '@angular/core';
 import { AnimationBuilder, query, style, stagger, animate } from '@angular/animations';
 
 function _buildAnimation(builder) {
@@ -20,7 +18,6 @@ export function jump(inner) {
     if (originalAfterViewInit) {
       originalAfterViewInit(...args);
     }
-    console.log(this, this.injector)
     const injector = this.injector;
     const el = injector.get(ElementRef);
     const builder = injector.get(AnimationBuilder);
