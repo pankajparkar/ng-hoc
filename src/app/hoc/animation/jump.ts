@@ -16,11 +16,14 @@ export function jump(inner, suffix) {
   // const inn =  {...inner};
   let inn: any = cloneDeep(inner);
   const cmp = inn.ɵcmp as any;
-  // cmp.selectors.length = 0
-  // const newSelector = `app-page-${suffix}`;
+  // cmp.type = cloneDeep(cmp.type);
+  const selectors = cmp.selectors;
+  // selectors.length = 0
+  const newSelector = `${suffix}`;
   // const { selectors: [selector] } = cmp;
   // selector.push(`app-page-${suffix}`);
-  // inn.decorators[0].args[0].selector = `${selector[0]},${newSelector}`;
+  inn.decorators[0].args[0].selector = `app-page, app-page-${newSelector}`;
+  selectors.push([`app-page-${newSelector}`])
   const originalAfterViewInit = cmp.afterViewInit;
   cmp.afterViewInit = function afterViewInit(...args) {
     if (originalAfterViewInit) {
@@ -32,5 +35,5 @@ export function jump(inner, suffix) {
     const animation = _buildAnimation(builder);
     animation.create(el.nativeElement).play();
   }
-  return inn;
+  return inn as ɵComponentType<any>;
 }
