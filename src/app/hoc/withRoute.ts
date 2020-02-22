@@ -49,5 +49,5 @@ export function withRoute(inner: Type<any>) {
         type: higherOrderComponent,
     });
 
-    return HigherOrderComponent;
+    return higherOrderComponent;
 }
