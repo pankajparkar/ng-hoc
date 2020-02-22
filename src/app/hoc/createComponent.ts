@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 
+@Component({
+    selector: 'app-page-jump',
+    template: ''
+})
+export class PageWithJump { }
+
 export function createComponent(component) {
-    @Component({
-        selector: 'app-page-jump',
-        template: ''
-    })
-    class NewHoc { }
-    NewHoc['ɵfac'] = component['ɵfac'];
-    NewHoc['ɵcmp'] = component['ɵcmp'];
-    NewHoc['decorators'] = component['decorators'];
-    NewHoc['ctorParameters'] = component['ctorParameters'];
-    return NewHoc;
+    PageWithJump['ɵfac'] = component['ɵfac'];
+    PageWithJump['ɵcmp'] = component.ɵcmp;
+    PageWithJump['decorators'] = component['decorators'];
+    PageWithJump['ctorParameters'] = component['ctorParameters'];
+
+    return PageWithJump;
 }
