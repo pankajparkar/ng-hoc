@@ -10,11 +10,11 @@ import { ClearAllSubscriptionComponent } from './clear-all-subscription/clear-al
 import { jump } from './hoc/animation/jump';
 
 // const PageWithJump = jump(PageComponent, 'jump') as any;
-const pageWithJump = jump(PageComponent, 'jump') as ɵComponentType<PageComponent>;
+const pageWithJump = jump(PageComponent) as ɵComponentType<PageComponent>;
 // const PageWithJump = pageWithJump.ɵcmp['type']; 
 
 @Component({
-  selector: 'fake',
+  selector: 'app-page-jump',
   template: ''
 })
 export class PageWithJump { }
