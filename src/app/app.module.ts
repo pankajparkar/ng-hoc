@@ -8,25 +8,9 @@ import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
 import { ClearAllSubscriptionComponent } from './clear-all-subscription/clear-all-subscription.component';
 import { jump } from './hoc/animation/jump';
+import { createComponent } from './hoc/createComponent';
 
-// const PageWithJump = jump(PageComponent, 'jump') as any;
-const pageWithJump = jump(PageComponent) as ɵComponentType<PageComponent>;
-// const PageWithJump = pageWithJump.ɵcmp['type']; 
-
-@Component({
-  selector: 'app-page-jump',
-  template: ''
-})
-export class PageWithJump { }
-PageWithJump['ɵfac'] = pageWithJump['ɵfac'];
-PageWithJump['ɵcmp'] = pageWithJump.ɵcmp;
-PageWithJump['decorators'] = pageWithJump['decorators'];
-PageWithJump['ctorParameters'] = pageWithJump['ctorParameters'];
-
-// const PageWithJump = Object.assign( Object.create( Object.getPrototypeOf(type)), type)
-// console.log(PageWithJump);
-// const PageWithJump = pageWithJump.ɵcmp['type'];
-
+const PageWithJump = createComponent(jump(PageComponent));
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-export function createComponent(component, selector: string) {
+export function createComponent(component) {
     @Component({
         selector: 'app-page-jump',
         template: ''
