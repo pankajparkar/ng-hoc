@@ -10,7 +10,7 @@ import { withStyle } from './../hoc/withStyle';
   `
 })
 @Component({
-  selector: 'app-page',
+  selector: 'app-page-jump',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss'],
 })

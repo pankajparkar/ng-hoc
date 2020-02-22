@@ -13,7 +13,7 @@ import {
 
 import { HigherOrderComponent } from './base';
 
-export function withRoute(inner: Type<any>) {
+export function withRoute(inner) {
 
     const ngComponent = inner as ɵComponentType<any>;
     const innerCompDef = ngComponent.ɵcmp as ɵComponentDef<any>;

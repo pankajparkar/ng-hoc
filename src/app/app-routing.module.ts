@@ -6,8 +6,9 @@ import { jump } from './hoc/animation/jump';
 import { withTooltip } from './hoc/withTooltip';
 
 const routes: Routes = [
-  {path: 'page', component: withTooltip(jump(withRoute(PageComponent)))},
-  {path: '**', redirectTo: 'page'}
+  {path: 'page', component: jump(PageComponent, 'jump')},
+  // {path: 'page', component: withTooltip(jump(withRoute(PageComponent)))},
+  // {path: '**', redirectTo: 'page'}
 ];
 
 @NgModule({

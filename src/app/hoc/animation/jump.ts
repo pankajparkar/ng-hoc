@@ -1,5 +1,6 @@
-import { ElementRef } from '@angular/core';
+import { ElementRef, ɵComponentType, ɵComponentDef } from '@angular/core';
 import { AnimationBuilder, query, style, stagger, animate } from '@angular/animations';
+import { cloneDeep } from 'lodash';
 
 function _buildAnimation(builder) {
   return builder.build([
@@ -11,8 +12,15 @@ function _buildAnimation(builder) {
     ])
   ]);
 }
-export function jump(inner) {
-  const cmp = inner.ɵcmp;
+export function jump(inner, suffix) {
+  // const inn =  {...inner};
+  let inn: any = cloneDeep(inner);
+  const cmp = inn.ɵcmp as any;
+  // cmp.selectors.length = 0
+  // const newSelector = `app-page-${suffix}`;
+  // const { selectors: [selector] } = cmp;
+  // selector.push(`app-page-${suffix}`);
+  // inn.decorators[0].args[0].selector = `${selector[0]},${newSelector}`;
   const originalAfterViewInit = cmp.afterViewInit;
   cmp.afterViewInit = function afterViewInit(...args) {
     if (originalAfterViewInit) {
@@ -24,5 +32,5 @@ export function jump(inner) {
     const animation = _buildAnimation(builder);
     animation.create(el.nativeElement).play();
   }
-  return inner;
+  return inn;
 }
