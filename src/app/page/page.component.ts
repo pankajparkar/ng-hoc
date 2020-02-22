@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector, ElementRef } from '@angular/core';
+import { Component, OnInit, Injector, ElementRef, Input } from '@angular/core';
 import { withStyle } from './../hoc/withStyle';
 
 @withStyle({
@@ -16,13 +16,16 @@ import { withStyle } from './../hoc/withStyle';
   styleUrls: ['./page.component.scss'],
 })
 export class PageComponent implements OnInit {
+
+  @Input() test;
+
   constructor(
     private injector: Injector
   ) {
   }
 
   ngOnInit() {
-    console.log('routeParams');
+    console.log('routeParams', this.test);
   }
 
 }
