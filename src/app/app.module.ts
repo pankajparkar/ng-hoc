@@ -9,8 +9,15 @@ import { PageComponent } from './page/page.component';
 import { ClearAllSubscriptionComponent } from './clear-all-subscription/clear-all-subscription.component';
 import { jump } from './hoc/functions/animation/jump';
 import { createComponent } from './hoc/functions/createComponent';
+import { withStyle } from './hoc/functions/withStyle';
 
-const pageWithJump = jump(PageComponent) as ɵComponentType<PageComponent>;
+const pageWithJump = withStyle(jump(PageComponent), {
+  style: `
+    .test[_ngcontent-%COMP%] {
+      background: green;
+    }
+  `
+}) as ɵComponentType<PageComponent>;
 
 @Component({
   selector: 'app-page-jump',

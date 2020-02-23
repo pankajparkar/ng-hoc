@@ -17,7 +17,6 @@ export function jump(inner) {
   let inn: any = cloneDeep(inner);
   const cmp = inn.ɵcmp as any;
   // cmp.type = cloneDeep(cmp.type);
-  // TODO: move selector change logic inside createComponent function.
   const selectors = cmp.selectors;
   selectors.length = 0
   const newSelector = `jump`;
