@@ -11,13 +11,13 @@ import { jump } from './hoc/functions/animation/jump';
 import { createComponent } from './hoc/functions/createComponent';
 import { withStyle } from './hoc/functions/withStyle';
 
-const pageWithJump = withStyle(jump(PageComponent), {
-  style: `
-    .test[_ngcontent-%COMP%] {
-      background: green;
-    }
-  `
-}) as ɵComponentType<PageComponent>;
+// const pageWithJump = withStyle(jump(PageComponent), {
+//   style: `
+//     .test[_ngcontent-%COMP%] {
+//       background: green;
+//     }
+//   `
+// }) as ɵComponentType<PageComponent>;
 
 @Component({
   selector: 'app-page-jump',
@@ -46,14 +46,14 @@ export class PageWithJump { }
 
 // 'app-page-jump'
 // const PageWithJump = 
-createComponent(PageWithJump, pageWithJump);
+// createComponent(PageWithJump, pageWithJump);
 
 @NgModule({
   declarations: [
     AppComponent,
     ClearAllSubscriptionComponent,
     PageComponent,
-    PageWithJump,
+    // PageWithJump,
   ],
   imports: [
     BrowserModule,

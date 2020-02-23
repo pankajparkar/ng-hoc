@@ -6,7 +6,7 @@ import { jump } from './hoc/functions/animation/jump';
 import { withTooltip } from './hoc/functions/withTooltip';
 
 const routes: Routes = [
-  {path: 'page', component: jump(PageComponent)},
+  {path: 'page', component: PageComponent},
   // {path: 'page', component: withTooltip(jump(withRoute(PageComponent)))},
   // {path: '**', redirectTo: 'page'}
 ];

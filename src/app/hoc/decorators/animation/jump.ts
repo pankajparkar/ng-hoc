@@ -15,16 +15,17 @@ function _buildAnimation(builder) {
 export function jump() {
   return (inner) => {
     // const inn =  {...inner};
-    let inn: any = cloneDeep(inner);
+    // let inn: any = cloneDeep(inner);
+    let inn: any = inner;
     const cmp = inn.ɵcmp as any;
     // cmp.type = cloneDeep(cmp.type);
-    const selectors = cmp.selectors;
-    selectors.length = 0
-    const newSelector = `jump`;
-    const { selectors: [selector] } = cmp;
-    // selector.push(`app-page-${suffix}`);
-    inn.decorators[0].args[0].selector = `app-page, app-page-${newSelector}`;
-    selectors.push([`app-page-${newSelector}`])
+    // const selectors = cmp.selectors;
+    // selectors.length = 0
+    // const newSelector = `jump`;
+    // const { selectors: [selector] } = cmp;
+    // // selector.push(`app-page-${suffix}`);
+    // inn.decorators[0].args[0].selector = `app-page, app-page-${newSelector}`;
+    // selectors.push([`app-page-${newSelector}`]);
     const originalAfterViewInit = cmp.afterViewInit;
     cmp.afterViewInit = function afterViewInit(...args) {
       if (originalAfterViewInit) {
