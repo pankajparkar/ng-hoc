@@ -3,7 +3,7 @@ import {
   ɵɵdirectiveInject, ɵɵdefineComponent, ɵRenderFlags, 
   ɵɵelement, ɵɵproperty, ɵɵelementStart, ɵɵelementEnd
 } from '@angular/core';
-import { HigherOrderComponent } from './base';
+import { HigherOrderComponent } from './../base';
 
 export function withTooltip(inner) {
 

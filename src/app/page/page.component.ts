@@ -1,5 +1,5 @@
 import { Component, OnInit, Injector, ElementRef, Input } from '@angular/core';
-import { withStyle } from './../hoc/withStyle';
+import { withStyle } from './../hoc/functions/withStyle';
 
 @withStyle({
   // TODO: right interceptor to write down _ngcontent_ part

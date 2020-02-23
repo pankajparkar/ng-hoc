@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageComponent } from './page/page.component';
-import { withRoute } from './hoc/withRoute';
-import { jump } from './hoc/animation/jump';
-import { withTooltip } from './hoc/withTooltip';
+import { withRoute } from './hoc/functions/withRoute';
+import { jump } from './hoc/functions/animation/jump';
+import { withTooltip } from './hoc/functions/withTooltip';
 
 const routes: Routes = [
   {path: 'page', component: jump(PageComponent)},

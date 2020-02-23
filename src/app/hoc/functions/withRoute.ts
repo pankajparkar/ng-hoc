@@ -11,7 +11,7 @@ import {
     INJECTOR,
 } from '@angular/core';
 
-import { HigherOrderComponent } from './base';
+import { HigherOrderComponent } from './../base';
 
 export function withRoute(inner) {
 
