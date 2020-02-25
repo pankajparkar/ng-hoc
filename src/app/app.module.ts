@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
 import { ClearAllSubscriptionComponent } from './clear-all-subscription/clear-all-subscription.component';
 import { jump } from './hoc/functions/animation/jump';
-import { createComponent } from './hoc/functions/createComponent';
+import { createComponent } from './hoc/createComponent';
 import { withStyle } from './hoc/functions/withStyle';
 
 const pageWithJump = withStyle(jump(PageComponent), {
