@@ -1,13 +1,14 @@
 import { Type, Component, ɵɵdefineComponent, ɵRenderFlags, ɵɵelementStart, ɵɵelement } from '@angular/core';
 
-
-@Component({
+export const PageComponentMetadata = {
     selector: 'app-page-jump',
     template: ''
-})
+};
+
+@Component(PageComponentMetadata)
 export class PageWithJump { }
 
-export function createComponent(source, target) {
+export function createComponent(source, target): Type<PageWithJump> {
 
     source['ɵfac'] = target['ɵfac'];
     source['ɵcmp'] = target.ɵcmp;

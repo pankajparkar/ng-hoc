@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
 import { ClearAllSubscriptionComponent } from './clear-all-subscription/clear-all-subscription.component';
 import { jump } from './hoc/functions/animation/jump';
-import { createComponent } from './hoc/createComponent';
+import { createComponent, PageComponentMetadata } from './hoc/createComponent';
 import { withStyle } from './hoc/functions/withStyle';
 
 const pageWithJump = withStyle(jump(PageComponent), {
@@ -19,10 +19,7 @@ const pageWithJump = withStyle(jump(PageComponent), {
   `
 }) as ɵComponentType<PageComponent>;
 
-@Component({
-  selector: 'app-page-jump',
-  template: ''
-})
+@Component(PageComponentMetadata)
 export class PageWithJump { }
 
 // export class ManualComponent {
