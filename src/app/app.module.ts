@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component, CUSTOM_ELEMENTS_SCHEMA, ɵComponentType, ɵɵproperty, ɵRenderFlags, ɵɵelement, ɵɵdefineComponent, ChangeDetectionStrategy } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ɵComponentType } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
@@ -8,47 +8,29 @@ import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
 import { ClearAllSubscriptionComponent } from './clear-all-subscription/clear-all-subscription.component';
 import { jump } from './hoc/functions/animation/jump';
-import { createComponent, PageComponentMetadata } from './hoc/createComponent';
+import { createComponent } from './hoc/createComponent';
 import { withStyle } from './hoc/functions/withStyle';
+import { withSelector } from './hoc/functions/withSelector';
+import { FakeComponent } from './hoc/fake.component';
 
-const pageWithJump = withStyle(jump(PageComponent), {
+const pageWithJump = withSelector(withStyle(jump(PageComponent), {
   style: `
     .test[_ngcontent-%COMP%] {
       background: green;
     }
   `
-}) as ɵComponentType<PageComponent>;
+}), 'app-page-jump') as ɵComponentType<PageComponent>;
 
-@Component(PageComponentMetadata)
-export class PageWithJump { }
+const Test = FakeComponent;
 
-// export class ManualComponent {
-//   static ngComponentDef = ɵɵdefineComponent(ɵɵdefineComponent({
-//     consts: [[]],
-//     vars: 1,
-//     decls: 1,
-//     directives: [
-//       // inner
-//     ],
-//     changeDetection: ChangeDetectionStrategy.Default,
-//     selectors: [[]],
-//     template: (rf, ctx) => {
-//         if (rf & ɵRenderFlags.Create) {
-//            ɵɵelement(0, 'div', null);
-//         }
-//     },
-//     type: ManualComponent,
-//   }));
-// }
-
-createComponent(PageWithJump, pageWithJump);
+createComponent(Test, pageWithJump);
 
 @NgModule({
   declarations: [
     AppComponent,
     ClearAllSubscriptionComponent,
     PageComponent,
-    PageWithJump,
+    Test,
   ],
   imports: [
     BrowserModule,
