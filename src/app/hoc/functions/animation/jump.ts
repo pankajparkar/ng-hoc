@@ -28,7 +28,7 @@ export function jump(inner) {
   const originalAfterViewInit = cmp.afterViewInit;
   cmp.afterViewInit = function afterViewInit(...args) {
     if (originalAfterViewInit) {
-      originalAfterViewInit(...args);
+      originalAfterViewInit.apply(this, ...args);
     }
     const injector = this.injector;
     const el = injector.get(ElementRef);

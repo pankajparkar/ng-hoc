@@ -22,7 +22,7 @@ export function jump() {
         console.log(cmp, ' cmp');
         const originalAfterViewInit = cmp.afterViewInit;
         if (originalAfterViewInit) {
-          originalAfterViewInit(...args);
+          originalAfterViewInit.apply(this, ...args);
         }
         const injector = this.injector;
         const el = injector.get(ElementRef);
