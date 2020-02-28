@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ɵComponentType } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ɵComponentType, Component, Type } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
@@ -21,16 +21,14 @@ const pageWithJump = withSelector(withStyle(jump(PageComponent), {
   `
 }), 'app-page-jump') as ɵComponentType<PageComponent>;
 
-const Test = FakeComponent;
-
-createComponent(Test, pageWithJump);
+createComponent(FakeComponent, pageWithJump);
 
 @NgModule({
   declarations: [
     AppComponent,
     ClearAllSubscriptionComponent,
     PageComponent,
-    Test,
+    FakeComponent,
   ],
   imports: [
     BrowserModule,

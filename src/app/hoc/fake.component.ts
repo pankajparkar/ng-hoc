@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'fake',
-    template: 'template'
+    template: ''
 })
 export class FakeComponent { }
