@@ -13,7 +13,7 @@ function _buildAnimation(builder) {
   ]);
 }
 
-export function jump() {
+export function fadeIn() {
   return (cmpType) => {
     const originalFactory = cmpType.ɵfac;
     cmpType.ɵfac = (...args) => {

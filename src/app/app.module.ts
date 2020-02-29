@@ -7,13 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
 import { ClearAllSubscriptionComponent } from './clear-all-subscription/clear-all-subscription.component';
-import { jump } from './hoc/functions/animation/jump';
+import { fadeIn } from './hoc/functions/animation/fadeIn';
 import { createComponent } from './hoc/createComponent';
 import { withStyle } from './hoc/functions/withStyle';
 import { withSelector } from './hoc/functions/withSelector';
 import { FakeComponent } from './hoc/fake.component';
 
-const pageWithJump = withSelector(withStyle(jump(PageComponent), {
+const pageWithJump = withSelector(withStyle(fadeIn(PageComponent), {
   style: `
     .test[_ngcontent-%COMP%] {
       background: green;

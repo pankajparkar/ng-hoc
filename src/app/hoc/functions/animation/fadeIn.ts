@@ -12,7 +12,7 @@ function _buildAnimation(builder) {
     ])
   ]);
 }
-export function jump(inner) {
+export function fadeIn(inner) {
   // const inn =  {...inner};
   let inn: any = cloneDeep(inner);
   const cmp = inn.ɵcmp as any;

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageComponent } from './page/page.component';
 import { withRoute } from './hoc/functions/withRoute';
-import { jump } from './hoc/functions/animation/jump';
+import { fadeIn } from './hoc/functions/animation/fadeIn';
 import { withTooltip } from './hoc/functions/withTooltip';
 
 const routes: Routes = [
