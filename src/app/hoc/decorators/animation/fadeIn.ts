@@ -15,23 +15,20 @@ function _buildAnimation(builder) {
 
 export function fadeIn() {
   return (cmpType) => {
-    const originalFactory = cmpType.ɵfac;
-    cmpType.ɵfac = (...args) => {
-      const cmp = originalFactory(...args);
-      cmp.afterViewInit = function afterViewInit(...args) {
-        console.log(cmp, ' cmp');
-        const originalAfterViewInit = cmp.afterViewInit;
-        if (originalAfterViewInit) {
-          originalAfterViewInit.apply(this, ...args);
-        }
-        const injector = this.injector;
-        const el = injector.get(ElementRef);
-        const builder = injector.get(AnimationBuilder);
-        const animation = _buildAnimation(builder);
-        animation.create(el.nativeElement).play();
+    const inn =  cmpType;
+    // let inn: any = cloneDeep(cmpType);
+    const cmp = inn.ɵcmp as any;
+    const originalAfterViewInit = cmp.afterViewInit;
+    cmp.afterViewInit = function afterViewInit(...args) {
+      if (originalAfterViewInit) {
+        originalAfterViewInit.apply(this, ...args);
       }
-      return cmp;
-    };
-    return cmpType;
+      const injector = this.injector;
+      const el = injector.get(ElementRef);
+      const builder = injector.get(AnimationBuilder);
+      const animation = _buildAnimation(builder);
+      animation.create(el.nativeElement).play();
+    }
+    return inn as ɵComponentType<any>;
   };
 }
