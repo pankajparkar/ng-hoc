@@ -1,8 +1,8 @@
 import { Component, OnInit, Injector, ElementRef, Input } from '@angular/core';
 import { withStyle } from './../hoc/decorators/withStyle';
-import { jump } from '../hoc/decorators/animation/jump';
+import { fadeIn } from '../hoc/decorators/animation/fadeIn';
 
-@jump()
+// @fadeIn()
 // @withStyle({
 //   // TODO: write function that parse and add _ngcontent_ dynamically.
 //   style: `
