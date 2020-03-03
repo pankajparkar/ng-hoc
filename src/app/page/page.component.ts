@@ -12,7 +12,6 @@ import { fadeIn } from '../hoc/decorators/animation/fadeIn';
 //   `
 // })
 @Component({
-  // selector: 'app-page-jump, app-page',
   selector: 'app-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss'],

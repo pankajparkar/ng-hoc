@@ -13,13 +13,7 @@ import { withStyle } from './hoc/functions/withStyle';
 import { withSelector } from './hoc/functions/withSelector';
 import { FakeComponent } from './hoc/fake.component';
 
-const pageWithJump = withSelector(withStyle(fadeIn(PageComponent), {
-  style: `
-    .test[_ngcontent-%COMP%] {
-      background: green;
-    }
-  `
-}), 'app-page-jump') as ɵComponentType<PageComponent>;
+const pageWithJump = withSelector(PageComponent,'app-page-jump') as ɵComponentType<PageComponent>;
 
 createComponent(FakeComponent, pageWithJump);
 
