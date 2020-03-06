@@ -1,8 +1,8 @@
 import { cloneDeep } from 'lodash';
 
-export function withSelector(inner, sel) {
+export function withSelector(inn, sel) {
+  const inner = cloneDeep(inn);
   const cmp = inner.ɵcmp;
-  cmp.type = cloneDeep(cmp.type);
   // TODO: move selector change logic inside createComponent function.
   const selectors = cmp.selectors;
   selectors.length = 0

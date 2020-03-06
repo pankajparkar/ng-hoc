@@ -13,7 +13,7 @@ import { withStyle } from './hoc/functions/withStyle';
 import { withSelector } from './hoc/functions/withSelector';
 import { FakeComponent } from './hoc/fake.component';
 
-const pageWithJump = withSelector(PageComponent,'app-page-jump') as ɵComponentType<PageComponent>;
+const pageWithJump = withSelector(fadeIn(PageComponent),'app-page-jump') as ɵComponentType<PageComponent>;
 
 createComponent(FakeComponent, pageWithJump);
 
