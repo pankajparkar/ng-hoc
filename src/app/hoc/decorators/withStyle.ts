@@ -1,8 +1,5 @@
 import { Type, getPlatform } from '@angular/core';
-import { Identifiers } from '@angular/compiler';
 
-var test = Identifiers['elementStylingApply'];
-console.log(test)
 export function withStyle(config: any) {
   return (cmpType) => {
     const originalFactory = cmpType.ɵfac;
